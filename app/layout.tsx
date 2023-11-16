@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import { Divider } from "@nextui-org/react";
 import clsx from "clsx";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
 	title: {
@@ -40,6 +41,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <Toaster position="top-center" />
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container flex-grow px-6 pt-16 mx-auto max-w-7xl">
