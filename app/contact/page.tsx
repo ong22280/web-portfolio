@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { title } from "@/components/primitives";
 import SectionHeading from "./components/section-heading";
 import { motion } from "framer-motion";
@@ -10,6 +11,16 @@ import { Input, Textarea } from "@nextui-org/input";
 import { IoMail } from "react-icons/io5";
 
 export default function ContactPage() {
+	const [value, setValue] = React.useState("junior2nextui.org");
+
+  const validateEmail = (value:string) =>
+    value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+
+  const isInvalid = React.useMemo(() => {
+    if (value === "") return false;
+
+    return validateEmail(value) ? false : true;
+  }, [value]);
   return (
     <div>
       <h1 className={title()}>Contact</h1>
@@ -38,11 +49,11 @@ export default function ContactPage() {
           type="email"
           label="Email"
           name="senderEmail"
-          isRequired
+          isClearable
           placeholder="you@example.com"
           labelPlacement="outside"
           startContent={
-            <IoMail className="flex-shrink-0 text-2xl pointer-events-none text-default-400" />
+            <IoMail className="flex-shrink-0 text-2xl pointer-events-none text-start text-default-400" />
           }
         />
         <Textarea
@@ -50,7 +61,6 @@ export default function ContactPage() {
           labelPlacement="outside"
           name="message"
           placeholder="Enter your message"
-          isRequired
           className="text-start"
         />
         <div className="flex justify-end">

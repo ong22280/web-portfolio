@@ -44,7 +44,7 @@ export default function RootLayout({
           <Toaster position="top-center" />
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className="container flex-grow px-6 pt-16 mx-auto max-w-7xl">
+            <main className="container flex-grow px-6 pt-4 mx-auto md:pt-16 max-w-7xl">
               {children}
             </main>
           </div>
