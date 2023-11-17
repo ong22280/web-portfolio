@@ -2,8 +2,6 @@
 
 import React from "react";
 import { title } from "@/components/primitives";
-import SectionHeading from "./components/section-heading";
-import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
 import toast from "react-hot-toast";
 import SubmitBtn from "./components/submit-btn";
