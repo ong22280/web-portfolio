@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -26,10 +27,27 @@ import { Divider } from "@nextui-org/react";
 import { FaGithub } from "react-icons/fa";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  // Close the menu when a NavbarMenuItem is clicked
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Open the menu when the NavbarMenu is opened
+  const handleMenuToggleClick = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
+
   return (
     <>
       <NextUINavbar
+        isMenuOpen={isMenuOpen}
         maxWidth="xl"
         position="sticky"
         classNames={{
@@ -82,7 +100,7 @@ export const Navbar = () => {
 
         <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
           <ThemeSwitch />
-          <NavbarMenuToggle />
+          <NavbarMenuToggle onClick={handleMenuToggleClick} />
         </NavbarContent>
 
         <NavbarMenu>
@@ -90,15 +108,10 @@ export const Navbar = () => {
             {siteConfig.navMenuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
-                  color={
-                    index === 2
-                      ? "primary"
-                      : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                  }
+                  color={"foreground"}
                   href={item.href}
                   size="lg"
+                  onClick={handleMenuItemClick}
                 >
                   {item.label}
                 </Link>
