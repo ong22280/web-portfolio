@@ -16,7 +16,7 @@ export default function Home() {
 	
   return (
     <>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 pt-4 md:py-10 md:pt-16">
+      <section className="flex flex-col items-center justify-center gap-4 py-8 pt-8 md:py-10 md:pt-16">
         <div className="justify-center inline-block text-center ">
           <h1 className={title()}>
             <span className="relative">

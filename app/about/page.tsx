@@ -58,7 +58,7 @@ export default function AboutPage() {
   return (
     <div>
       <h1 className={title()}>About</h1>
-      <main className="mt-12 mb-6 md:flex">
+      <main className="mt-4 mb-6 md:mt-12 md:flex">
         {/* Image */}
         <div className="flex justify-center flex-shrink-0 mb-6 md:justify-start">
           <Image
