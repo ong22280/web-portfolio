@@ -5,6 +5,7 @@ import { skillsData } from "@/lib/data";
 import { Chip, Divider } from "@nextui-org/react";
 import Image from "next/image";
 import profile from "@/public/profile.jpeg";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React from "react";
 import {
   ReactOriginal,

@@ -17,7 +17,7 @@ export default function Project({
   return (
     <main className="mb-8 group sm:mb-12 last:mb-0">
       <section className=" max-w-[42rem]    sm:pr-8 relative sm:h-[20rem]  transition sm:group-even:pl-8 dark:text-white  ">
-        <Link href="/">
+        <div>
           <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
             <h3 className="text-2xl font-semibold">{title}</h3>
             <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
@@ -56,7 +56,7 @@ export default function Project({
               group-even:right-[initial] group-even:-left-40"
             />
           )}
-        </Link>
+        </div>
       </section>
     </main>
   );
