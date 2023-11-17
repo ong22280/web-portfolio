@@ -45,6 +45,7 @@ export default function ContactPage() {
       >
         <Input
           type="email"
+          variant="bordered"
           label="Email"
           name="senderEmail"
           isClearable
@@ -56,6 +57,7 @@ export default function ContactPage() {
         />
         <Textarea
           label="Message"
+          variant="bordered"
           labelPlacement="outside"
           name="message"
           placeholder="Enter your message"

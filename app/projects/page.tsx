@@ -5,7 +5,7 @@ import Project from "./components/project";
 
 export default function ProjectsPage() {
 	return (
-    <div>
+    <div className="">
       <h1 className={title()}>Projects</h1>
       <div className="mt-12">
         {projectsData.map((project, index) => (

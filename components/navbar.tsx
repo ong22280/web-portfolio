@@ -10,10 +10,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
 
 import { link as linkStyles } from "@nextui-org/theme";
 
@@ -23,7 +20,6 @@ import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import { usePathname } from "next/navigation";
-import { Divider } from "@nextui-org/react";
 import { FaGithub } from "react-icons/fa";
 
 export const Navbar = () => {
@@ -47,6 +43,7 @@ export const Navbar = () => {
   return (
     <>
       <NextUINavbar
+        isBordered
         isMenuOpen={isMenuOpen}
         maxWidth="xl"
         position="sticky"
@@ -120,7 +117,6 @@ export const Navbar = () => {
           </div>
         </NavbarMenu>
       </NextUINavbar>
-      <Divider className="container px-6 mx-auto max-w-7xl" />
     </>
   );
 };

@@ -10,28 +10,28 @@ import clsx from "clsx";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
-	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
+  return (
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
@@ -43,8 +43,8 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Toaster position="top-center" />
           <div className="relative flex flex-col h-screen overflow-y-scroll no-scrollbar">
-            <Navbar />
-            <main className="container flex-grow px-6 pt-4 mx-auto md:pt-16 max-w-7xl">
+            <main className="container flex-grow px-6 mx-auto max-w-7xl">
+              <Navbar />
               {children}
             </main>
           </div>

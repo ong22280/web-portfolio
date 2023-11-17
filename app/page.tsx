@@ -1,22 +1,22 @@
 "use client";
 
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { HiDownload } from "react-icons/hi";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+
+	// get theme from providers.tsx
+	const theme = useTheme(); // dark or light
+	
   return (
     <>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <section className="flex flex-col items-center justify-center gap-4 py-8 pt-4 md:py-10 md:pt-16">
         <div className="justify-center inline-block text-center ">
           <h1 className={title()}>
             <span className="relative">
@@ -38,13 +38,22 @@ export default function Home() {
             <br />
             I&apos;m
           </h1>
-          <h1 className={title({ color: "violet" })}>
-            {" "}
-            Ong Sittipong&nbsp;
-          </h1>{" "}
+          {theme.theme === "dark" ? (
+            <h1 className={title({ color: "blue" })}>
+              {" "}
+              Sittipong Hemloun&nbsp;
+            </h1>
+          ) : (
+            <h1 className={title({ color: "yellow" })}>
+              {" "}
+              Sittipong Hemloun&nbsp;
+            </h1>
+          )}
           <br />
           <h1 className={title()}>I enjoy to be a web developer.</h1>
-          <h2 className={subtitle({ class: "mt-4" })}>let&apos;s see who I am</h2>
+          <h2 className={subtitle({ class: "mt-4" })}>
+            let&apos;s see who I am
+          </h2>
         </div>
 
         <div className="flex gap-3">
