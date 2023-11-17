@@ -1,4 +1,5 @@
-import kuWongnai from "@/public/ku-wongnai.png";
+import kuWongnai from "@/public/kuWongnai.png";
+import beam from "@/public/beam.png";
 
 // export const experiencesData = [
 //   {
@@ -48,7 +49,7 @@ export const projectsData = [
     description:
       "A website for event management and registration using monolith architecture. ",
     tags: ["Laravel", "Laravel Blade", "Tailwind", "MySQL"],
-    imageUrl: kuWongnai,
+    imageUrl: beam,
   },
 ] as const;
 

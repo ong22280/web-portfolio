@@ -56,7 +56,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             download
             href={"/resume.pdf"}
@@ -71,28 +71,34 @@ export default function Home() {
             Download CV
             <HiDownload className="transition opacity-60 group-hover:translate-y-1" />
           </Link>
-          <Link
-            isExternal
-            className={
-              buttonStyles({ variant: "bordered", radius: "full" }) +
-              " hover:scale-105 "
-            }
-            href={siteConfig.links.github}
-          >
-            <FaGithub size={20} />
-            GitHub
-          </Link>
-          <Link
-            isExternal
-            className={
-              buttonStyles({ variant: "bordered", radius: "full" }) +
-              " hover:scale-105 "
-            }
-            href={siteConfig.links.linkedin}
-          >
-            <FaLinkedin size={20} />
-            Linkedin
-          </Link>
+
+          <div className="flex gap-3">
+            {/* GitHub link */}
+            <Link
+              isExternal
+              className={
+                buttonStyles({ variant: "bordered", radius: "full" }) +
+                " hover:scale-105 "
+              }
+              href={siteConfig.links.github}
+            >
+              <FaGithub size={20} />
+              GitHub
+            </Link>
+
+            {/* Linkedin link */}
+            <Link
+              isExternal
+              className={
+                buttonStyles({ variant: "bordered", radius: "full" }) +
+                " hover:scale-105 "
+              }
+              href={siteConfig.links.linkedin}
+            >
+              <FaLinkedin size={20} />
+              Linkedin
+            </Link>
+          </div>
         </div>
       </section>
     </>
