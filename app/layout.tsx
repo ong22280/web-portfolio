@@ -42,7 +42,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Toaster position="top-center" />
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col h-screen overflow-y-scroll no-scrollbar">
             <Navbar />
             <main className="container flex-grow px-6 pt-4 mx-auto md:pt-16 max-w-7xl">
               {children}

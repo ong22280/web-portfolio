@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <div>
       <h1 className={title()}>Contact</h1>
-      <p className="mt-6 text-gray-700 dark:text-white/80">
+      <p className="mt-12 text-gray-700 dark:text-white/80">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:hemloun.s@gmail.com">
           hemloun.s@gmail.com
@@ -33,7 +33,7 @@ export default function ContactPage() {
       </p>
 
       <form
-        className="flex flex-col mt-6 dark:text-black gap-y-6"
+        className="flex flex-col mt-8 dark:text-black gap-y-6"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 

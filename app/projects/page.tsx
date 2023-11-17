@@ -7,7 +7,7 @@ export default function ProjectsPage() {
 	return (
     <div>
       <h1 className={title()}>Projects</h1>
-      <div className="mt-6">
+      <div className="mt-12">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
             <Project {...project} />
