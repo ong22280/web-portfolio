@@ -154,6 +154,15 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <a href="https://wakatime.com/@018b1f7e-27b2-4c78-a321-0f067342c8f6">
+          <Image
+            src="https://wakatime.com/badge/user/018b1f7e-27b2-4c78-a321-0f067342c8f6.svg"
+            alt="Total time coded since Oct 11 2023"
+            width={155}
+            height={50}
+            className="mt-6 shadow-lg rounded-xl"
+          />
+        </a>
 
         {/* GitHub data */}
         <Link isExternal href={siteConfig.links.github}>
