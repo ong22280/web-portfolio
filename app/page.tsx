@@ -122,7 +122,7 @@ export default function Home() {
               }) + " hover:scale-105 "
             }
           >
-            Download CV
+            Download Resume
             <HiDownload className="transition opacity-60 group-hover:translate-y-1" />
           </Link>
 
