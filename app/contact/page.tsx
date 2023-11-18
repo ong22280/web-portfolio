@@ -31,7 +31,7 @@ export default function ContactPage() {
       </p>
 
       <form
-        className="flex flex-col mt-8 dark:text-black gap-y-6"
+        className="flex flex-col mt-8 gap-y-6"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 

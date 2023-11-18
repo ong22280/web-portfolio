@@ -4,16 +4,70 @@ import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { HiDownload } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+
+interface GithubData {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string | null;
+  hireable: boolean | null;
+  bio: string;
+  twitter_username: string | null;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+}
 
 export default function Home() {
+  const [githubData, setGithubData] = useState<GithubData | null>(null);
+  const theme = useTheme(); // dark or light
 
-	// get theme from providers.tsx
-	const theme = useTheme(); // dark or light
-	
+  useEffect(() => {
+    // Fetch GitHub data
+    const fetchGithubData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.github.com/users/ong22280"
+        );
+        console.log("GitHub data:", response.data);
+        setGithubData(response.data);
+      } catch (error) {
+        console.error("Error fetching GitHub data:", error);
+      }
+    };
+
+    fetchGithubData();
+  }, []);
+
   return (
     <>
       <section className="flex flex-col items-center justify-center gap-4 py-8 pt-8 md:py-10 md:pt-16">
@@ -100,6 +154,37 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* GitHub data */}
+        <Link isExternal href={siteConfig.links.github}>
+          <div className="flex flex-col items-center justify-center gap-4 p-6 mx-12 mt-6 text-lg bg-gray-800 border-2 border-gray-700 shadow-lg md:mx-0 md:flex-row rounded-xl">
+            {githubData && (
+              <>
+                {/* Avatar */}
+                <div className="flex items-center justify-center w-16 h-16 transition border-2 border-gray-200 rounded-full shadow-md dark:bg-gray-800 hover:scale-105">
+                  <Image
+                    src={githubData.avatar_url}
+                    width={80}
+                    height={80}
+                    alt="GitHub Avatar"
+                    className="rounded-full"
+                  />
+                </div>
+
+                {/* GitHub data */}
+                <div className="flex flex-col justify-center gap-2 ml-4 text-white">
+                  <h1 className="text-2xl font-bold">{githubData.login}</h1>
+
+                  <p className="text-gray-300">
+                    {githubData.public_repos} repositories,{" "}
+                    {githubData.followers} followers, {githubData.following}{" "}
+                    following.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        </Link>
       </section>
     </>
   );

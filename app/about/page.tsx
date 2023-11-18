@@ -71,7 +71,7 @@ export default function AboutPage() {
         {/* content */}
         <div className="ml-12 text-left">
           <h1 className="mb-4 text-xl font-bold">
-            Hello, I&apos;m{" "}
+            Hi, I&apos;m{" "}
             <span className="text-primary">Sittipong Hemluan</span> (Ong).
           </h1>
 
