@@ -31,13 +31,13 @@ const icons = [
   { component: <ReactOriginal size="50" />, name: "React" },
   { component: <NextjsOriginal size="50" />, name: "Next.js" },
   { component: <JavascriptPlain size="50" />, name: "JavaScript" },
-  { component: <JavascriptOriginal size="50" />, name: "TypeScript" },
+  // { component: <JavascriptOriginal size="50" />, name: "TypeScript" },
   { component: <Css3Original size="50" />, name: "CSS" },
   { component: <Html5Original size="50" />, name: "HTML" },
 
   // Backend
-  { component: <NodejsOriginal size="50" />, name: "Node.js" },
-  { component: <ExpressOriginal size="50" />, name: "Express" },
+  // { component: <NodejsOriginal size="50" />, name: "Node.js" },
+  // { component: <ExpressOriginal size="50" />, name: "Express" },
   { component: <JavaOriginal size="50" />, name: "Java" },
   { component: <SpringOriginal size="50" />, name: "Spring" },
   { component: <PhpPlain size="50" />, name: "PHP" },
