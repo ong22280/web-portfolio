@@ -113,7 +113,7 @@ export default function Home() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             download
-            href={"/resume.pdf"}
+            href={"/cv.pdf"}
             className={
               buttonStyles({
                 color: "primary",
@@ -122,7 +122,7 @@ export default function Home() {
               }) + " hover:scale-105 "
             }
           >
-            Download Resume
+            Download CV
             <HiDownload className="transition opacity-60 group-hover:translate-y-1" />
           </Link>
 
