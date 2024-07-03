@@ -1,5 +1,13 @@
 import kuWongnai from "@/public/kuWongnai.png";
 import beam from "@/public/beam.png";
+import kuTranscript from "@/public/kuTranscript.png";
+import scbChallenge from "@/public/scbChallenge.png";
+import wespace from "@/public/wespace.png";
+import tsri from "@/public/tsri.png";
+import kuFondue from "@/public/kuFondue.png";
+import kuSport from "@/public/kuSport.png";
+import regex from "@/public/regex.png";
+import valentine from "@/public/valentine.png";
 
 // export const experiencesData = [
 //   {
@@ -36,7 +44,6 @@ export const projectsData = [
     tags: [
       "Next.js",
       "SpringBoot",
-      "Laravel",
       "Node(Express)",
       "RubbitMQ",
       "MySQL",
@@ -45,11 +52,73 @@ export const projectsData = [
     imageUrl: kuWongnai,
   },
   {
+    title:
+      "Platform for reporting credits for each subject area of the curriculum",
+    description:
+      "web application for uploading PDF transcript files to check whether the credits in each subject group are enough to graduate.",
+    tags: ["Laravel", "Laravel Blade", "Tailwind", "MySQL"],
+    imageUrl: kuTranscript,
+  },
+  {
+    title: "WESpace",
+    description:
+      "WE Space is a platform for students to explore their career path.",
+    tags: [
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Mui",
+      "Redux-Tookit",
+      "Reacr-Query",
+    ],
+    imageUrl: wespace,
+  },
+  {
+    title: "Thailand Science Research and Innovation",
+    description:
+      "Enhance SRI system, deliver sustainable economic and social value, and encourage Thailand to become a developed country",
+    tags: ["React", "Next.js", "Scss", "Ant-design", "Wordpress backend"],
+    imageUrl: tsri,
+  },
+  {
+    title: "Landing page for a company that registers for events",
+    description:
+      "A landing page for a company that registers for events. The website is designed to be simple and easy to use.",
+    tags: ["Next.js", "Tailwind", "Framer Motion"],
+    imageUrl: scbChallenge,
+  },
+  {
     title: "The platform for event management and registration",
     description:
       "A website for event management and registration using monolith architecture. ",
     tags: ["Laravel", "Laravel Blade", "Tailwind", "MySQL"],
     imageUrl: beam,
+  },
+  {
+    title: "KU-Fondue",
+    description: "Program for reporting complaints within Kasetsart University",
+    tags: ["Java", "JavaFX", "csv"],
+    imageUrl: kuFondue,
+  },
+  {
+    title: "KU-Sport",
+    description:
+      "Website for booking sports facilities at Kasetsart University",
+    tags: ["Next.js", "Tailwind", "prisma", "PostgreSQL"],
+    imageUrl: kuSport,
+  },
+  {
+    title: "Regex to NFAs",
+    description:
+      "Convert a regular expression to a non-deterministic finite automaton",
+    tags: ["Next.js", "Tailwind", "vis-network"],
+    imageUrl: regex,
+  },
+  {
+    title: "Valentine Mail",
+    description: "Send a valentine message to your loved one",
+    tags: ["Next.js", "SMTP", "nodemailer"],
+    imageUrl: valentine,
   },
 ] as const;
 
